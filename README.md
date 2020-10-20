@@ -6,8 +6,8 @@ Esta aplicação faz um ranqueamento de vídeos do Youtube baseado nas minhas pr
 
 ## Etapas do processo
 ### 1. Coleta de dados
-Os dados foram coletados do site do Youtube através de ferraments de web scrapping. As duas bibliotecas python usadas para  essa tarefa foram **requests-html** e **BeautifulSoup**.<br>
-Foram extraídos das páginas dos vídeos informações como: o título, quantidade de vizualizações e data de publicação.<br>
+Os dados foram coletados do site do Youtube através de ferramentas de web scrapping. As duas bibliotecas python usadas para  essa tarefa foram **requests-html** e **BeautifulSoup**.<br>
+Foram extraídos das páginas dos vídeos informações como: o título, quantidade de visualizações e data de publicação.<br>
 A rotulação foi feita manualmente olhando para o título de cada vídeo e decidindo se era algo que eu consideraria interessante assistir.
 
 ### 2. Processamento dos dados
@@ -23,4 +23,4 @@ As métricas de validação analisadas foram **average_precision_score** e **roc
 Os dados foram separados entre "passado" e "futuro". Os dados representando o passado foram usados para o treinemanto dos algoritmos e os do futuros foram usados para validar o resultado dos modelos, simulando a situação em produção.
 
 ### 5. Implementação
-A implementação foi feita com auxílio da biblioteca **Flask** e a aplicação final foi hospedad no **Heroku**.
+A implementação foi feita com auxílio da biblioteca **Flask** e a aplicação final foi hospedada no **Heroku**.
