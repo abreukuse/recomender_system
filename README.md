@@ -22,5 +22,5 @@ As métricas de validação analisadas foram **average_precision_score** e **roc
 ### 4. Validação
 Os dados foram separados entre "passado" e "futuro". Os dados representando o passado foram usados para o treinemanto dos algoritmos e os do futuros foram usados para validar o resultado dos modelos, simulando a situação em produção.
 
-5. Implementação
+### 5. Implementação
 A implementação foi feita com auxílio da biblioteca **Flask** e a aplicação final foi hospedad no **Heroku**.
