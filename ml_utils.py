@@ -9,6 +9,7 @@ import json
 mdl_rf = joblib.load('mdl_rf.pkl')
 title_vec = joblib.load('title_vec_rf.pkl')
 
+# esse dicionário é para passar os meses de portugês para ingês
 mapa_meses = {'Fev':'Feb',
               'Abr':'Apr',
               'Mai':'May',
@@ -18,6 +19,7 @@ mapa_meses = {'Fev':'Feb',
               'Dez':'Dec'}
 
 def clean_date(data):
+  # transforma as datas de publicação dos vídeos no formato datetime do pandas
   regex = re.compile(r'(\d{,2}) de ([a-z]{3})\. de (\d{4})')
   if re.search(regex, data['date']).groups() is None:
     return None
@@ -40,6 +42,7 @@ def clean_date(data):
 
 
 def clean_views(data):
+  # processa a quantidade de visualização em cada vídeo para inteiro
   raw_views_str = re.match(r'(\d+\.?\d*)', data['views'])
   if raw_views_str is None: 
     return 0
@@ -49,6 +52,7 @@ def clean_views(data):
 
 
 def compute_features(data):
+  # constroi os atributos numéricos e textuais
   if 'views' not in data:
     return None
 
@@ -74,6 +78,7 @@ def compute_features(data):
 
 
 def compute_prediction(data):
+  # faz o cálculo para ser usado no ranqueamento
   feature_array = compute_features(data)
 
   if feature_array is None:
@@ -83,8 +88,3 @@ def compute_prediction(data):
   p = prf
 
   return p
-
-
-
-
-
